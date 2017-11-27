@@ -21,7 +21,7 @@
 		self.title = @"MWPhotoBrowser";
         
         // Clear cache for testing
-        [[SDImageCache sharedImageCache] clearDisk];
+        [[SDImageCache sharedImageCache] clearDiskOnCompletion:nil];
         [[SDImageCache sharedImageCache] clearMemory];
         
         _segmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"Push", @"Modal", nil]];
@@ -30,7 +30,7 @@
         
         UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:_segmentedControl];
         self.navigationItem.rightBarButtonItem = item;
-        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil];
+        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
 
         [self loadAssets];
         
@@ -263,17 +263,17 @@
         }
 		case 5:
             // Photos
-			[photos addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm4.static.flickr.com/3567/3523321514_371d9ac42f_b.jpg"]]];
-			[photos addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm4.static.flickr.com/3629/3339128908_7aecabc34b_b.jpg"]]];
-			[photos addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm4.static.flickr.com/3364/3338617424_7ff836d55f_b.jpg"]]];
-			[photos addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm4.static.flickr.com/3590/3329114220_5fbc5bc92b_b.jpg"]]];
-			[photos addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm3.static.flickr.com/2449/4052876281_6e068ac860_b.jpg"]]];
+			[photos addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://img15.3lian.com/2015/f2/49/d/90.jpg"]]];
+			[photos addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://sc.jb51.net/uploads/allimg/140118/8-14011P1353QH.jpg"]]];
+			[photos addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://img05.tooopen.com/images/20140509/sy_60669481823.jpg"]]];
+			[photos addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://pic65.nipic.com/file/20150419/14041019_223248047000_2.jpg"]]];
+			[photos addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://pic1.win4000.com/wallpaper/8/51bb08e7a700a.jpg"]]];
             // Thumbs
-			[thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm4.static.flickr.com/3567/3523321514_371d9ac42f_q.jpg"]]];
-			[thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm4.static.flickr.com/3629/3339128908_7aecabc34b_q.jpg"]]];
-			[thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm4.static.flickr.com/3364/3338617424_7ff836d55f_q.jpg"]]];
-			[thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm4.static.flickr.com/3590/3329114220_5fbc5bc92b_q.jpg"]]];
-			[thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://farm3.static.flickr.com/2449/4052876281_6e068ac860_q.jpg"]]];
+			[thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://pic1.win4000.com/wallpaper/b/535f45aedf718.jpg"]]];
+			[thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://sc.jb51.net/uploads/allimg/140118/8-14011P1353QH.jpg"]]];
+			[thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://img05.tooopen.com/images/20140509/sy_60669481823.jpg"]]];
+			[thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://pic65.nipic.com/file/20150419/14041019_223248047000_2.jpg"]]];
+			[thumbs addObject:[MWPhoto photoWithURL:[NSURL URLWithString:@"http://pic1.win4000.com/wallpaper/8/51bb08e7a700a.jpg"]]];
             // Options
 			break;
 		case 6:
